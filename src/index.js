@@ -3,6 +3,7 @@ require("dotenv").config();
 const path = require("node:path");
 const {
   ActionRowBuilder,
+  ActivityType,
   ButtonBuilder,
   ButtonStyle,
   Client,
@@ -159,6 +160,7 @@ async function sendInteractionError(interaction, error) {
 }
 
 client.once(Events.ClientReady, (readyClient) => {
+  readyClient.user.setActivity("Wood Simulator", { type: ActivityType.Playing });
   console.log(`Todo bot is online as ${readyClient.user.tag}`);
 });
 
