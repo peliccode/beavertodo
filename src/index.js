@@ -7,6 +7,7 @@ const {
   ButtonStyle,
   Client,
   EmbedBuilder,
+  Events,
   GatewayIntentBits,
   ModalBuilder,
   TextInputBuilder,
@@ -157,7 +158,7 @@ async function sendInteractionError(interaction, error) {
   }
 }
 
-client.once("ready", (readyClient) => {
+client.once(Events.ClientReady, (readyClient) => {
   console.log(`Todo bot is online as ${readyClient.user.tag}`);
 });
 
